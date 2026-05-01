@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="WordleProject.WordleController" styleClass="root" spacing="20" alignment="TOP_CENTER">
+
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+
+    <ImageView fitHeight="200" fitWidth="200" preserveRatio="true">
+        <image>
+            <Image url="@logo.png" />
+        </image>
+    </ImageView>
+
+
+    <Text text="Guess the word" styleClass="title" />
+
+
+    <HBox spacing="40" alignment="CENTER">
+        <Text fx:id="scoreText" styleClass="score-display" />
+        <Text fx:id="highScoreText" styleClass="score-display" />
+        <Text fx:id="triesText" styleClass="score-display" />
+    </HBox>
+
+
+    <HBox spacing="15" alignment="CENTER">
+        <TextField fx:id="guessField" styleClass="text-field" promptText="Enter a 5-letter word" />
+        <Button fx:id="guessButton" styleClass="button" text="Guess" onAction="#onGuess" />
+        <Text fx:id="hintsText" styleClass="hint-display" />
+        <Button fx:id="hintButton" styleClass="hint-button" text="Get Hint" onAction="#onHint" />
+    </HBox>
+
+
+    <GridPane fx:id="grid" styleClass="grid-pane" />
+</VBox>
