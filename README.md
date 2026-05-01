@@ -109,12 +109,6 @@ java --module-path "path/to/javafx-sdk/lib" --add-modules javafx.controls,javafx
 - **Dijkstra**: weighted shortest-path approach using cumulative distance.
 - **A\***: informed search using Manhattan heuristic + path cost.
 
-## Team
-
-- Abdul Wali
-- Muhammad Tahzeeb
-- Nisha
-
 ## Future Improvements
 
 - Side-by-side algorithm comparison view
@@ -125,4 +119,3 @@ java --module-path "path/to/javafx-sdk/lib" --add-modules javafx.controls,javafx
 
 ## License
 
-This project is for academic/educational use. Add a formal license file (e.g., MIT) if you plan to publish it for open-source reuse.
