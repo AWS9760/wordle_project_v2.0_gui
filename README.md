@@ -2,9 +2,6 @@
 
 Interactive maze and pathfinding visualizer built with Java and JavaFX.
 
-> This README documents the **Java project only** (inside `src/`).
-> The `Python Mazesolver/` folder is intentionally excluded.
-
 ## Overview
 
 Maze Solver Visualizer is an educational desktop app for exploring how different pathfinding algorithms behave on a grid. You can draw walls, place start/end nodes, generate mazes, and watch algorithms animate their exploration and final path.
@@ -116,6 +113,3 @@ java --module-path "path/to/javafx-sdk/lib" --add-modules javafx.controls,javafx
 - Save/load maze configurations
 - Export run statistics
 - Step-by-step execution mode
-
-## License
-
