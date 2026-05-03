@@ -1,115 +1,145 @@
-# Maze Solver Visualizer (JavaFX)
+# 🎯 Wordle v2.0 (GUI Edition)
 
-Interactive maze and pathfinding visualizer built with Java and JavaFX.
+A modern **Wordle clone with a graphical interface**, built using **JavaFX**.  
+This desktop application delivers an interactive gameplay experience with visual feedback, scoring mechanics, and a clean UI design.
 
-## Overview
+---
 
-Maze Solver Visualizer is an educational desktop app for exploring how different pathfinding algorithms behave on a grid. You can draw walls, place start/end nodes, generate mazes, and watch algorithms animate their exploration and final path.
+## ✨ Features
 
-## Features
+- 🎮 **Classic Wordle Gameplay**  
+  Guess the hidden **5-letter word** within **6 attempts**.
 
-- 4 pathfinding algorithms:
-  - `BFS`
-  - `DFS`
-  - `A*`
-  - `Dijkstra`
-- Maze generation:
-  - `Random`
-  - `Wilson's Algorithm`
-- Interactive grid editing:
-  - Left click / drag to draw walls
-  - Right click to place/move start and end
-- Real-time animation with speed control
-- Adjustable grid size
-- Live status metrics:
-  - nodes visited
-  - path length
-  - path cost
-  - execution time
-  - run status
+- 🎨 **Dynamic Color Feedback**  
+  - 🟩 Correct letter in correct position  
+  - 🟨 Correct letter in wrong position  
+  - ⬜ Letter not in the word  
 
-## Tech Stack
+- 💡 **Hint System**  
+  - Up to **2 hints per game**  
+  - Reveals a correct letter and its position  
 
-- Java
-- JavaFX (`javafx.controls`, `javafx.graphics`)
-- Object-oriented architecture (Model / UI / Controller separation)
+- 🏆 **Scoring System**
+  - Points based on remaining attempts  
+  - 🎯 **+100 bonus** for winning without hints  
+  - 📈 Tracks **session high score**
 
-## Project Structure
+- 🖥️ **Graphical Interface**
+  - Built with **JavaFX + FXML**
+  - Styled using custom **CSS**
+  - Supports keyboard input (**Enter key**) and buttons
 
-```text
+---
+
+## 📸 Screenshots
+
+> Add a screenshot of your game here (recommended for better presentation)
+
+---
+
+## ⚙️ Requirements
+
+| Tool        | Version |
+|------------|--------|
+| Java (JDK) | 23 |
+| JavaFX     | 17+ |
+| Maven      | 3+ |
+
+---
+
+## 🚀 How to Run
+
+### ▶️ Using Maven
+
+# Windows
+```bash
+.\mvnw.cmd clean javafx:run
+```
+
+# Linux / macOS
+```bash
+./mvnw clean javafx:run
+```
+
+---
+
+### 💻 Using IDE
+
+1. Open the project as a **Maven project**
+2. Run the main class:
+
+---
+
+## 🎯 How to Play
+
+1. Enter a valid **5-letter word**
+2. Press **Enter** or click **Guess**
+3. Analyze the color feedback
+4. Use hints if needed (limited)
+5. Guess the word before attempts run out!
+
+---
+
+## 🧮 Scoring System
+
+- Score increases based on **remaining attempts**
+- Winning without hints grants a **bonus of 100 points**
+- Using hints reduces the final score
+- Losing resets the current score
+- **High score** is tracked during the session
+
+---
+
+## 📂 Project Structure
+
+```bash
 src/
-├── Main.java
-├── controller/
-│   ├── AnimationController.java
-│   └── MazeController.java
-├── model/
-│   ├── Cell.java
-│   ├── CellType.java
-│   ├── Grid.java
-│   ├── algorithms/
-│   │   ├── BFS.java
-│   │   ├── DFS.java
-│   │   ├── AStar.java
-│   │   └── Dijkstra.java
-│   └── maze/
-│       ├── MazeGenerator.java
-│       └── WilsonsAlgorithm.java
-├── ui/
-│   ├── GridRenderer.java
-│   ├── Toolbar.java
-│   └── StatusBar.java
-└── utils/
-    └── Pair.java
+├── main/
+│   ├── java/WordleProject/
+│   │   ├── Wordle.java
+│   │   ├── WordleController.java
+│   │   ├── WordleGame.java
+│   │   └── GameLogic.java
+│   └── resources/WordleProject/
+│       ├── WordleView.fxml
+│       ├── wordle.css
+│       ├── words.txt
+│       └── images/
 ```
 
-## How to Run
+---
 
-### Option 1: IntelliJ IDEA (recommended)
+## 🛠️ Tech Stack
 
-1. Open the project in IntelliJ.
-2. Configure a JDK (17+ recommended).
-3. Add JavaFX SDK to project libraries.
-4. Set VM options for run configuration:
+- **Language:** Java  
+- **UI Framework:** JavaFX (FXML + CSS)  
+- **Build Tool:** Maven  
 
-```bash
---module-path "path/to/javafx-sdk/lib" --add-modules javafx.controls,javafx.graphics
-```
+---
 
-5. Run `Main.java`.
+## 💡 Future Improvements
 
-### Option 2: Command Line
+- Add animations and transitions  
+- Improve UI responsiveness  
+- Add difficulty levels  
+- Persistent high score system  
+- On-screen keyboard UI  
 
-From project root:
+---
 
-```bash
-javac --module-path "path/to/javafx-sdk/lib" --add-modules javafx.controls,javafx.graphics -d out src/Main.java src/controller/*.java src/model/*.java src/model/algorithms/*.java src/model/maze/*.java src/ui/*.java src/utils/*.java
-java --module-path "path/to/javafx-sdk/lib" --add-modules javafx.controls,javafx.graphics -cp out Main
-```
+## 🤝 Contributing
 
-> Replace `path/to/javafx-sdk/lib` with your local JavaFX SDK path.
+Contributions are welcome!  
+Feel free to fork the project and submit a pull request.
 
-## Usage Guide
+---
 
-1. Choose an algorithm from the dropdown.
-2. Build a maze manually (left click/drag) or generate one.
-3. (Optional) adjust speed and grid size.
-4. Click **Start Visualization**.
-5. Watch explored nodes and final path.
-6. Use:
-   - **Reset Path** to clear only traversal results
-   - **Clear Grid** to reset the full board
+## 📜 License
 
-## Algorithm Notes
+This project is open-source and available under the **MIT License**.
 
-- **BFS**: shortest path for unweighted grids.
-- **DFS**: depth-first exploration, not guaranteed shortest path.
-- **Dijkstra**: weighted shortest-path approach using cumulative distance.
-- **A\***: informed search using Manhattan heuristic + path cost.
+---
 
-## Future Improvements
+## 👨‍💻 Author
 
-- Side-by-side algorithm comparison view
-- Additional maze generators
-- Save/load maze configurations
-- Export run statistics
-- Step-by-step execution mode
+**Abdul Wali**  
